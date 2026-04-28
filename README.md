@@ -30,7 +30,15 @@ To map the celestial sphere onto a flat LCD screen without losing scientific int
 * $c$ : Zenith Distance
 
 ### **2. Basic equations**
-$$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
+$$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$ (1st equation)
+$$\tan A = \frac{\cos \delta \sin t}{\sin \phi \cos \delta \cos t - \cos \phi \sin \delta}$$ (2nd eqaution)
+or 
+$$
+\begin{cases} 
+\cos a \sin A = -\cos \delta \sin t \\ 
+\cos a \cos A = \cos \phi \sin \delta - \sin \phi \cos \delta \cos t 
+\end{cases}
+$$
 
 ### **3. Coordinate Transformation**
 The system first converts **Equatorial coordinates** to **Horizontal coordinates** based on your local latitude ($\phi$) and the calculated **Local Sidereal Time** ($LST$). 
