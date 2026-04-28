@@ -30,26 +30,24 @@ To map the celestial sphere onto a flat LCD screen without losing scientific int
 * $c$ : Zenith Distance
 
 ### **2. Basic equations**
-$$
-\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t
-$$
-1st equation (law of cosine in spherical surface)
-$\tan A = \frac{\cos \delta \sin t}{\sin \phi \cos \delta \cos t - \cos \phi \sin \delta}$
+- $$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
+**1st equation (law of cosine in spherical surface)**
+- $$\tan A = \frac{\cos \delta \sin t}{\sin \phi \cos \delta \cos t - \cos \phi \sin \delta}$$
 or 
-$$
+- $$
 \begin{cases} 
 \cos a \sin A = -\cos \delta \sin t \\ 
 \cos a \cos A = \cos \phi \sin \delta - \sin \phi \cos \delta \cos t 
 \end{cases}
 $$ 2nd eqaution
-$$\sin A = \frac{-\cos \delta \sin t}{\cos a}$$ 3rd equation
+- $$\sin A = \frac{-\cos \delta \sin t}{\cos a}$$ 3rd equation
 
 
 ### **3. Coordinate Transformation**
 The system first converts **Equatorial coordinates** to **Horizontal coordinates** based on your local latitude ($\phi$) and the calculated **Local Sidereal Time** ($LST$). 
 Let Z be the direction of Zenith, Y be the North, X be the East. 
 Using the equations above: 
-$$
+- $$
 \begin{cases} 
 z= \cos c = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t\\
 x = \cos a \sin A = -\cos \delta \sin t\\ 
@@ -63,8 +61,8 @@ The system uses gnominic projection to simulate the process of projection from a
 Using law of similar triangles: 
 
 **Mapping to Screen**:
-  - $$X =\frac {R \cdot x}{z} = R \cdot \frac{-\cos \delta \sin t}{\cos c}$$
-  - $$Y =\frac{R \cdot y}{z} =R \cdot \frac{\cos \phi \sin \delta - \sin \phi \cos \delta \cos t}{\cos c}$$
+  - $X =\frac {R \cdot x}{z} = R \cdot \frac{-\cos \delta \sin t}{\cos c}$
+  - $Y =\frac{R \cdot y}{z} =R \cdot \frac{\cos \phi \sin \delta - \sin \phi \cos \delta \cos t}{\cos c}$
 
 > **Note**: A negative multiplier is applied to the X-axis to perform a "mirror Correction", ensuring the constellations match the perspective of a person looking upward at the ceiling.
 
