@@ -21,11 +21,26 @@
 
 To map the celestial sphere onto a flat LCD screen without losing scientific integrity, the project implements the following mathematical pipeline:
 
-### **1. Coordinate Transformation**
-The system first converts **Equatorial coordinates** (Right Ascension $\alpha$, Declination $\delta$) to **Horizontal coordinates** based on your local latitude ($\phi$) and the calculated **Local Sidereal Time** ($LST$). 
+### **1. 参数定义 (Parameter Definitions)**
+* $\phi$ : Latitude
+* $\lambda$ : Longitude
+* $\delta$ : Declination
+* $t$ : Hour Angle
+* $R$ : Scaling Factor / Focal Length
+* $c$ : Zenith Distance
 
-### **2. Gnomonic Projection Formula**
-We use the Gnomonic projection to simulate light rays passing from the center of the Earth through the LCD "window":
+### **2. Basic equations**
+$$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
+
+### **3. Coordinate Transformation**
+The system first converts **Equatorial coordinates** to **Horizontal coordinates** based on your local latitude ($\phi$) and the calculated **Local Sidereal Time** ($LST$). 
+Let Z be the direction of Zenith, Y be the North, X be the East. 
+based on the law of cosine in spherical surface, Z equals: 
+$$\cos c = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
+
+
+### **4. Gnomonic Projection Formula**
+The system uses gnominic projection to simulate the process of projection from a light source to the ceiling of the room. 
 * **Scaling Factor ($k$)**: 
   $$k = \frac{f}{\sin(\phi_1)\sin(\phi_s) + \cos(\phi_1)\cos(\phi_s)\cos(\lambda_s - \lambda_0)}$$
 * **Mapping to Screen**:
