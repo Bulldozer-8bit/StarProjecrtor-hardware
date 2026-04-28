@@ -30,7 +30,7 @@ To map the celestial sphere onto a flat LCD screen without losing scientific int
 * $c$ : Zenith Distance
 
 ### **2. Basic equations**
-$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$
+$$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
 1st equation (law of cosine in spherical surface)
 $\tan A = \frac{\cos \delta \sin t}{\sin \phi \cos \delta \cos t - \cos \phi \sin \delta}$
 or 
