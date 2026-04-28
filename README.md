@@ -33,9 +33,7 @@ To map the celestial sphere onto a flat LCD screen without losing scientific int
 - $$\sin a = \sin \phi \sin \delta + \cos \phi \cos \delta \cos t$$
 **1st equation (law of cosine in spherical surface)**
 - $$\tan A = \frac{\cos \delta \sin t}{\sin \phi \cos \delta \cos t - \cos \phi \sin \delta}$$
-or 
-- $$\begin{cases} \cos a \sin A = -\cos \delta \sin t \\ \cos a \cos A = \cos \phi \sin \delta - \sin \phi \cos \delta \cos t \end{cases}
-$$ 2nd eqaution
+2nd eqaution
 - $$\sin A = \frac{-\cos \delta \sin t}{\cos a}$$ 3rd equation
 
 
