@@ -1,1 +1,1 @@
-# Cynthia's Zenith: A real-timm indoor starry sky projector
+# Cynthia's Zenith: A real-time indoor starry sky projector
