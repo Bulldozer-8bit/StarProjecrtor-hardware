@@ -1,41 +1,33 @@
 #include <Arduino.h>
-#include <stdint.h>
-#include "stars_data.h" // 包含你生成的星表数组
+#include <TFT_eSPI.h>
 
-typedef struct {
-    uint16_t ra_raw;
-    uint16_t dec_raw;
-    int16_t  mag_raw;
-} __attribute__((packed)) Star;
+TFT_eSPI tft = TFT_eSPI();
 
 void setup() {
-    Serial.begin(115200);
-    // 等待串口
-    unsigned long timeout = millis();
-    while (!Serial && (millis() - timeout < 5000));
-
-    Serial.println("\n--- 开始解析真实星表数据 ---");
-
-    // stars_bin 和 stars_bin_len 是 xxd 自动生成的变量名
-    int total_stars = stars_bin_len / sizeof(Star);
-    Serial.printf("检测到星点总数: %d\n", total_stars);
-
-    Star* stars = (Star*)stars_bin;
-
-    for (int i = 0; i < total_stars; i++) {
-        // 还原物理量
-        float ra = stars[i].ra_raw * 360.0 / 65535.0;
-        float dec = (stars[i].dec_raw * 180.0 / 65535.0) - 90.0;
-        float mag = stars[i].mag_raw / 100.0;
-
-        // 每隔 100 颗打印一颗，防止串口刷屏太快
-        if (i % 100 == 0) {
-            Serial.printf("索引[%d] -> RA: %.2f, Dec: %.2f, Mag: %.2f\n", i, ra, dec, mag);
-        }
-    }
-    Serial.println("--- 解析完成 ---");
+    tft.init();
+    tft.setRotation(0);
+    tft.fillScreen(TFT_BLACK);
+    
+    // 1. 画圆形的边框，确认是否对齐屏幕物理边缘
+    tft.drawCircle(120, 120, 119, TFT_GREEN);
+    
+    // 2. 画一个十字架，确认物理中心
+    tft.drawLine(0, 120, 240, 120, TFT_DARKGREY);
+    tft.drawLine(120, 0, 120, 240, TFT_DARKGREY);
+    
+    tft.setTextColor(TFT_GOLD);
+    tft.setTextDatum(MC_DATUM);
+    tft.drawString("ZENITH", 120, 100, 2);
 }
 
 void loop() {
-    // 保持空运行
+    // 模拟一颗亮星在圆周运动
+    static float angle = 0;
+    int x = 120 + 80 * cos(angle);
+    int y = 120 + 80 * sin(angle);
+    
+    tft.fillCircle(x, y, 3, TFT_WHITE);
+    delay(20);
+    tft.fillCircle(x, y, 3, TFT_BLACK); // 擦除
+    angle += 0.05;
 }
