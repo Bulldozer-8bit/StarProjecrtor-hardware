@@ -1,2 +1,1 @@
-# StarProjector
-Real-time star sky
+# Cynthia's Zenith: A real-timm indoor starry sky projector
