@@ -21,7 +21,7 @@
 
 To map the celestial sphere onto a flat LCD screen without losing scientific integrity, the project implements the following mathematical pipeline:
 
-### **1. 参数定义 (Parameter Definitions)**
+### **1. Parameter Definitions**
 * $\phi$ : Latitude
 * $\lambda$ : Longitude
 * $\delta$ : Declination
@@ -69,12 +69,10 @@ The clarity of your indoor starry sky is governed by the **Thin Lens Equation**.
 ### **The Focal Equation**
 $$\frac{1}{f} = \frac{1}{u} + \frac{1}{v}$$
 * **Object Distance ($u$)**: The distance between the LCD panel and the lens center.
-* **Image Distance ($v$)**: The distance from the lens to your ceiling (typically 2.5m - 4.0m).
+* **Image Distance ($v$)**: The distance from the lens to your ceiling (typically 2.5m - 4.0m). If the focal lens is 50mm, when v changes from 2-4 meters (typical ceiling height), u should be adjustable in a range of 0.64mm. In our system, a thread is used to adjust the camera lens. 
 
 ### **Magnification**
 $$M=\frac{v}{u}$$
-
-### **Indoor Optimization**
 Since $v \gg f$, the object distance $u$ is set slightly beyond the focal length. This allows the small 1.28" screen to be magnified into a large-scale immersive sky while maintaining high star-point density.
 
 ---
@@ -88,5 +86,11 @@ To mimic the human eye's perception of brightness, we use a **non-linear power c
 * **Tier 2**: Magnitudes < 3.0 are 1-pixel anti-aliased circles.
 * **Tier 3**: Dimmer stars are rendered as single high-contrast pixels.
 
+### **Altitude Angle Filter**
+Since the system typically projects image on the ceiling, to mimic the experience of star observation, stars that have altitude angles < 50 degrees are not shown. 
+
 ### **Meteor Dynamics**
-Meteors are generated using a random vector algorithm. Each meteor possesses a **decaying life-cycle**, creating a fading trail effect by drawing progressively dimmer line segments in the direction of travel.
+To bring more fun, meteors are generated using a random vector algorithm. Each meteor possesses a **decaying life-cycle**, creating a fading trail effect by drawing progressively dimmer line segments in the direction of travel. This section should not be used if you are using the system for scientific purposes. 
+
+## **Data Set**
+The information of the stars is gained from hipparcos. the system only uses about 3000 of them that are observable   in Bejing/Haidian. 
