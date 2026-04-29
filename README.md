@@ -93,4 +93,4 @@ Since the system typically projects image on the ceiling, to mimic the experienc
 To bring more fun, meteors are generated using a random vector algorithm. Each meteor possesses a **decaying life-cycle**, creating a fading trail effect by drawing progressively dimmer line segments in the direction of travel. This section should not be used if you are using the system for scientific purposes. 
 
 ## **Data Set**
-The information of the stars is gained from hipparcos. the system only uses about 3000 of them that are observable   in Bejing/Haidian. 
+The information of the stars is gained from hipparcos. the system only uses about 3000 of them that are observable   in Bejing/Haidian (using filter.py). 
