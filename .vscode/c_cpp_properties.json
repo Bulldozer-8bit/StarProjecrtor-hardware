@@ -8,10 +8,10 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/include",
-                "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/src",
+                "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/include",
+                "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/.pio/libdeps/esp32-s3-devkitm-1/TFT_eSPI",
+                "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/.pio/libdeps/esp32-s3-devkitm-1/TFT_eSPI",
                 "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/FS/src",
@@ -248,10 +248,10 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/include",
-                    "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/src",
+                    "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/include",
+                    "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                    "/Users/daniel/Documents/PlatformIO/Projects/Cynthia’s Zenith/.pio/libdeps/esp32-s3-devkitm-1/TFT_eSPI",
+                    "/Users/daniel/Documents/PlatformIO/Projects/Zenith-of-Cynthia/.pio/libdeps/esp32-s3-devkitm-1/TFT_eSPI",
                     "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoespressif32/libraries/FS/src",
