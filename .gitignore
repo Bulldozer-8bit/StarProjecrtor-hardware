@@ -14,3 +14,7 @@ __pycache__/
 *.dat
 *.gz
 *.bc
+
+.DS_Store
+.vscode/
+.pio/
